@@ -106,7 +106,7 @@
                 <button onclick="openModal('registerModal')" class="w-full sm:w-auto bg-doraBlue hover:bg-sky-600 text-white font-bold px-6 sm:px-8 py-3.5 rounded-2xl text-center shadow-lg border-2 border-doraDark text-sm sm:text-base">
                     [Get Started]
                 </button>
-                <a href="https://wa.me/6287763398012?text=Halo%20Admin%20MirrorTalk.id%2C%20saya%20tertarik%20untuk%20mencoba%20Free%20Trial%20platform%20ini." target="_blank" rel="noopener" class="w-full sm:w-auto bg-white hover:bg-gray-50 border-2 border-doraDark text-doraDark font-bold px-6 sm:px-8 py-3.5 rounded-2xl text-center shadow-md transition-all text-sm sm:text-base">
+                <a href="https://wa.me/6285920774938?text=Hello%20MirrorTalk%20Team,%20i%20Would%20Like%20To%20Join%20The%20Free%20Trial%20Program." target="_blank" rel="noopener" class="w-full sm:w-auto bg-white hover:bg-gray-50 border-2 border-doraDark text-doraDark font-bold px-6 sm:px-8 py-3.5 rounded-2xl text-center shadow-md transition-all text-sm sm:text-base">
                     [Free Trial]
                 </a>
             </div>
@@ -204,41 +204,33 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white border-2 border-doraBlue p-4 rounded-2xl flex flex-col justify-between">
-                            <div>
-                                <h4 class="font-bold text-xs uppercase text-gray-400 tracking-wider mb-2">7. Voice Recording System</h4>
-                                <p class="text-xs text-doraDark font-medium mb-4">Record your practice session for autonomous assessment feedback.</p>
-                            </div>
-                            <div class="space-y-2 bg-doraLight/30 p-3 rounded-xl border border-gray-200">
-                                <div class="flex justify-center gap-2">
-                                    <button onclick="triggerRecording('recording')" class="bg-red-500 text-white font-bold px-3 py-2 rounded-lg text-xs hover:bg-red-600 transition-all flex items-center gap-1"><i class="fa-solid fa-microphone"></i> Start</button>
-                                    <button onclick="triggerRecording('stopped')" class="bg-gray-700 text-white font-bold px-3 py-2 rounded-lg text-xs hover:bg-gray-800 transition-all flex items-center gap-1"><i class="fa-solid fa-stop"></i> Stop</button>
-                                    <button onclick="triggerRecording('playing')" class="bg-doraBlue text-white font-bold px-3 py-2 rounded-lg text-xs hover:bg-sky-600 transition-all flex items-center gap-1"><i class="fa-solid fa-play"></i> Play</button>
-                                </div>
-                                <div id="recordingStatusText" class="text-center font-mono text-[10px] text-gray-500 mt-2">Status: Idle</div>
-                            </div>
-                        </div>
+                   <div class="space-y-4 bg-white border-2 border-doraBlue p-5 rounded-2xl">
+    <span class="text-xs uppercase font-mono tracking-wider text-doraBlue font-bold block">7. Voice Recording System</span>
+    <h3 class="text-xl font-bold text-doraDark">Record your practice session for autonomous assessment feedback.</h3>
+    
+    <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl text-center max-w-md mx-auto">
+        <div class="flex justify-center gap-3 mb-3">
+            <button id="vStart" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl font-bold flex items-center gap-2 transition shadow-sm">
+                <i class="fa-solid fa-microphone"></i> Start
+            </button>
+            <button id="vStop" disabled class="bg-slate-700 hover:bg-slate-800 text-white px-4 py-2 rounded-xl font-bold flex items-center gap-2 transition shadow-sm opacity-50 cursor-not-allowed">
+                <i class="fa-solid fa-square"></i> Stop
+            </button>
+            <button id="vPlay" disabled class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-xl font-bold flex items-center gap-2 transition shadow-sm opacity-50 cursor-not-allowed">
+                <i class="fa-solid fa-play"></i> Play
+            </button>
+        </div>
 
-                        <div class="bg-white border-2 border-doraBlue p-4 rounded-2xl">
-                            <h4 class="font-bold text-xs uppercase text-gray-400 tracking-wider mb-2">8. Pronunciation & Confidence Feedback</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="grid grid-cols-3 gap-1 text-center font-mono font-bold">
-                                    <div class="bg-emerald-50 border border-emerald-200 p-1 rounded"><span class="block text-[10px] text-gray-400 font-sans">Prono</span><span class="text-emerald-600">80%</span></div>
-                                    <div class="bg-blue-50 border border-blue-200 p-1 rounded"><span class="block text-[10px] text-gray-400 font-sans">Fluency</span><span class="text-blue-600">85%</span></div>
-                                    <div class="bg-amber-50 border border-amber-200 p-1 rounded"><span class="block text-[10px] text-gray-400 font-sans">Confidence</span><span class="text-amber-600">78%</span></div>
-                                </div>
-                                <div class="bg-gray-50 p-2 rounded-xl border border-gray-200 text-[11px] leading-relaxed">
-                                    <span class="font-bold text-doraDark block mb-0.5">Suggestions:</span>
-                                    <ul class="list-disc list-inside space-y-0.5 text-gray-600">
-                                        <li>Speak more slowly.</li>
-                                        <li>Practice difficult sounds.</li>
-                                        <li>Maintain eye contact with the mirror.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="text-center space-y-2">
+            <p id="vStatus" class="text-xs font-mono text-gray-500 italic">Status: Idle</p>
+            <button id="vDelete" class="text-[10px] text-red-500 hover:underline font-mono font-bold block mx-auto hidden">
+                [ 🗑️ Delete/Reset Recording ]
+            </button>
+        </div>
+
+        <audio id="vPlayback" class="hidden"></audio>
+    </div>
+</div>
 
                     <div class="bg-amber-50 border-2 border-doraYellow p-4 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                         <div class="space-y-1">
@@ -372,10 +364,10 @@
             <div class="bg-white border-2 border-gray-300 p-6 rounded-2xl flex flex-col justify-between text-center shadow-sm">
                 <div>
                     <h4 class="font-bold text-lg text-doraDark mb-1">Basic Package</h4>
-                    <div class="text-2xl font-extrabold text-doraBlue font-mono my-2">Rp10.000</div>
+                    <div class="text-2xl font-extrabold text-doraBlue font-mono my-2">Rp15.000</div>
                     <p class="text-gray-500 text-xs font-medium leading-relaxed">Suitable for beginners who want to start practicing English speaking.</p>
                 </div>
-                <button onclick="openPackageModal('Basic', 'Rp10.000', ['Access to 5 speaking topics', 'Basic pronunciation exercises', 'Weekly speaking challenge', 'Learning materials'])" class="mt-6 w-full py-2.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl text-xs font-bold border border-doraDark block shadow-md">
+                <button onclick="openPackageModal('Basic', 'Rp15.000', ['Access to 5 speaking topics', 'Basic pronunciation exercises', 'Weekly speaking challenge', 'Learning materials'])" class="mt-6 w-full py-2.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl text-xs font-bold border border-doraDark block shadow-md">
                     Choose Basic Package
                 </button>
             </div>
@@ -539,7 +531,7 @@
                 <span class="text-xs uppercase font-mono tracking-wider text-doraBlue font-bold block">📞 Contact Us</span>
                 <h3 class="text-xl font-bold text-doraDark">Get In Touch</h3>
                 <div class="space-y-2 text-xs sm:text-sm text-gray-700 font-mono font-medium">
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-doraBlue w-4"></i> Email: mirrortalk.id@gmail.com</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-doraBlue w-4"></i> Email: talkidmirror@gmail.com</p>
                     <p class="flex items-center gap-2"><i class="fa-brands fa-instagram text-doraBlue w-4"></i> Instagram: <a href="https://www.instagram.com/mirrortalk.id1?igsh=MWo2OHQydTB3cGZlaQ==" target="_blank" class="hover:underline text-doraBlue">@mirrortalk.id1</a></p>
                     <p class="flex items-center gap-2"><i class="fa-brands fa-tiktok text-doraDark w-4"></i> TikTok: <a href="https://www.tiktok.com/@mirrortalk.id?_r=1&_t=ZS-96x13qe1ibq" target="_blank" class="hover:underline text-doraBlue">@mirrortalk.id</a></p>
                     <p class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-doraDark w-4"></i> WhatsApp: <a href="https://chat.whatsapp.com/Lrd6KETO2u31asYWkROM4F?s=cl&p=a&mlu=1&amv=1" target="_blank" class="hover:underline text-doraBlue">@mirrortalk.id</a></p>
@@ -611,7 +603,7 @@
         <div class="relative group animate-soft-bounce">
             <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping"></span>
             
-            <a href="https://wa.me/6287763398012?text=Halo%20Admin%20MirrorTalk.id%2C%20saya%20butuh%20bantuan%20informasi%20mengenai%20platform%20ini." 
+            <a href="https://wa.me/6285920774938?text=Halo%20Admin%20MirrorTalk.id%2C%20saya%20butuh%20bantuan%20informasi%20mengenai%20platform%20ini." 
                target="_blank" rel="noopener" 
                class="relative flex items-center justify-center w-12 h-12 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-lg transform hover:scale-110 transition-all duration-300">
                 <i class="fa-brands fa-whatsapp text-2xl"></i>
@@ -661,8 +653,12 @@
         function handleRegisterSubmit(e) {
             e.preventDefault();
             closeModal('registerModal');
+            
+            // Sembunyikan Landing Hero utama dan tampilkan Dashboard Speaking & Progress Tracker
             document.getElementById('home').classList.add('hidden');
             document.getElementById('mainDashboard').classList.remove('hidden');
+            
+            // Scroll otomatis menuju area dashboard interaktif
             document.getElementById('mainDashboard').scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -671,6 +667,28 @@
             document.getElementById('home').classList.remove('hidden');
         }
 
+        // 3,4,5. PACKAGE MANAGEMENT TRANSITIONS
+        function openPackageModal(name, price, features) {
+            currentSelectedPackage = name;
+            document.getElementById('pckTitle').textContent = `${name} Package Details`;
+            document.getElementById('pckPrice').textContent = price;
+            
+            const listContainer = document.getElementById('pckFeaturesList');
+            listContainer.innerHTML = '';
+            features.forEach(feat => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center gap-2';
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 text-[10px]"></i> <span>${feat}</span>`;
+                listContainer.appendChild(li);
+            });
+            openModal('packageModal');
+        }
+
+        function redirectToPackageWA() {
+            closeModal('packageModal');
+            const message = encodeURIComponent(`Hello MirrorTalk Team, I would like to join the free trial program ${currentSelectedPackage} Package.`);
+            window.open(`https://wa.me/6285920774938?text=${message}`, '_blank');
+        }
         // PACKAGE MANAGEMENT TRANSITIONS
         function openPackageModal(name, price, features) {
             currentSelectedPackage = name;
@@ -691,7 +709,7 @@
         function redirectToPackageWA() {
             closeModal('packageModal');
             const targetMessage = encodeURIComponent(`Halo Admin MirrorTalk.id, saya ingin membeli paket *${currentSelectedPackage}* yang seharga ${document.getElementById('pckPrice').textContent}. Mohon informasi langkah pendaftaran selanjutnya.`);
-            window.open(`https://wa.me/6287763398012?text=${targetMessage}`, '_blank');
+            window.open(`https://wa.me/6285920774938?text=${targetMessage}`, '_blank');
         }
 
         // TOPIC-BASED SPEAKING PRACTICE CONTROLLER
@@ -717,20 +735,102 @@
             `;
         }
 
-        // VOICE RECORDING SIMULATOR
-        function triggerRecording(status) {
-            const textEl = document.getElementById('recordingStatusText');
-            if (status === 'recording') {
-                textEl.textContent = 'Status: 🎙️ Recording Audio (Simulated)...';
-                textEl.className = 'text-center font-mono text-[10px] text-red-500 font-bold animate-pulse';
-            } else if (status === 'stopped') {
-                textEl.textContent = 'Status: ⏹️ Recording Stopped. Ready to Playback.';
-                textEl.className = 'text-center font-mono text-[10px] text-gray-700 font-bold';
-            } else if (status === 'playing') {
-                textEl.textContent = 'Status: ▶️ Playing Back Last Record Simulation...';
-                textEl.className = 'text-center font-mono text-[10px] text-doraBlue font-bold';
+        // --- FEATURE: VOICE RECORDING SYSTEM (7) LOGIC ---
+let vMediaRecorder;
+let vAudioChunks = [];
+let vAudioUrl = null;
+
+const vBtnStart = document.getElementById('vStart');
+const vBtnStop = document.getElementById('vStop');
+const vBtnPlay = document.getElementById('vPlay');
+const vBtnDelete = document.getElementById('vDelete');
+const vPlayback = document.getElementById('vPlayback');
+const vStatusText = document.getElementById('vStatus');
+
+// 1. Logika MULAI MEREKAM (Start)
+vBtnStart.addEventListener('click', async () => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        vMediaRecorder = new MediaRecorder(stream);
+        vAudioChunks = [];
+
+        vMediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+                vAudioChunks.push(event.data);
             }
-        }
+        };
+
+        vMediaRecorder.onstop = () => {
+            const audioBlob = new Blob(vAudioChunks, { type: 'audio/wav' });
+            if (vAudioUrl) URL.revokeObjectURL(vAudioUrl); // Bersihkan memori lama
+            vAudioUrl = URL.createObjectURL(audioBlob);
+            vPlayback.src = vAudioUrl;
+
+            // Aktifkan tombol play dan delete setelah stop selesai
+            vBtnPlay.disabled = false;
+            vBtnPlay.classList.remove('opacity-50', 'cursor-not-allowed');
+            vBtnDelete.classList.remove('hidden');
+            vStatusText.textContent = "Status: Recording stopped. Ready to play.";
+        };
+
+        vMediaRecorder.start();
+        
+        // Atur status tombol interaktif
+        vBtnStart.disabled = true;
+        vBtnStart.classList.add('opacity-50', 'cursor-not-allowed');
+        vBtnStop.disabled = false;
+        vBtnStop.classList.remove('opacity-50', 'cursor-not-allowed');
+        vBtnPlay.disabled = true;
+        vBtnPlay.classList.add('opacity-50', 'cursor-not-allowed');
+        
+        vStatusText.textContent = "Status: Recording... 🔴";
+    } catch (err) {
+        alert("Gagal mengakses mikrofon. Pastikan kamu mengizinkan akses mikrofon pada browser!");
+        console.error(err);
+    }
+});
+
+// 2. Logika BERHENTI MEREKAM (Stop)
+vBtnStop.addEventListener('click', () => {
+    if (vMediaRecorder && vMediaRecorder.state !== "inactive") {
+        vMediaRecorder.stop();
+        
+        // Hentikan penggunaan hardware mic agar ikon record di browser mati
+        vMediaRecorder.stream.getTracks().forEach(track => track.stop());
+
+        // Atur status tombol
+        vBtnStart.disabled = false;
+        vBtnStart.classList.remove('opacity-50', 'cursor-not-allowed');
+        vBtnStop.disabled = true;
+        vBtnStop.classList.add('opacity-50', 'cursor-not-allowed');
+    }
+});
+
+// 3. Logika PUTAR REKAMAN (Play)
+vBtnPlay.addEventListener('click', () => {
+    if (vPlayback.src) {
+        vPlayback.play();
+        vStatusText.textContent = "Status: Playing audio... ▶️";
+        
+        vPlayback.onended = () => {
+            vStatusText.textContent = "Status: Idle";
+        };
+    }
+});
+
+// 4. Logika HAPUS REKAMAN (Delete)
+vBtnDelete.addEventListener('click', () => {
+    vPlayback.src = "";
+    if (vAudioUrl) URL.revokeObjectURL(vAudioUrl);
+    vAudioChunks = [];
+    vAudioUrl = null;
+
+    // Kembalikan ke posisi semula
+    vBtnPlay.disabled = true;
+    vBtnPlay.classList.add('opacity-50', 'cursor-not-allowed');
+    vBtnDelete.classList.add('hidden');
+    vStatusText.textContent = "Status: Idle (Recording Deleted)";
+});
 
         // INTERACTIVE REVIEW & RATING SYSTEM FUNCTIONS
         function setStarRating(rating) {
@@ -785,29 +885,133 @@
             alert('Thank you! Your feedback review has been posted successfully.');
         }
 
-        // AI ASSISTANT BOT RESPONSE ENGINE
-        function handleChatSubmit(e) {
-            e.preventDefault();
-            const input = document.getElementById('aiInput'), container = document.getElementById('chatMessages');
-            const txt = input.value.trim(); if(!txt) return;
+    // AI ASSISTANT BOT RESPONSE ENGINE (AUTOMATIC BILINGUAL DETECTION)
+async function handleChatSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById('aiInput');
+    const container = document.getElementById('chatMessages');
+    const txt = input.value.trim(); 
+    if(!txt) return;
 
-            const uMsg = document.createElement('div');
-            uMsg.className = "bg-doraBlue text-white p-2 rounded-xl max-w-[85%] self-end text-left";
-            uMsg.textContent = txt; container.appendChild(uMsg);
-            input.value = ''; container.scrollTop = container.scrollHeight;
+    // 1. Tampilkan pesan pengguna di layar
+    const uMsg = document.createElement('div');
+    uMsg.className = "bg-doraBlue text-white p-2 rounded-xl max-w-[85%] self-end text-left";
+    uMsg.textContent = txt; 
+    container.appendChild(uMsg);
+    
+    input.value = ''; 
+    container.scrollTop = container.scrollHeight;
 
-            let res = "I am a prototype assistant for MirrorTalk.id. Please register via Get Started to enjoy complete structural independent training guidance courses!";
-            if (txt.toLowerCase().includes('hello') || txt.toLowerCase().includes('hi')) {
-                res = "Hello Learner! Complete your assignment registration to jump into independent speech evaluation dashboard workspaces.";
-            }
+    // 2. Deteksi bahasa input (Indonesia atau Inggris)
+    const apakahBahasaInggris = deteksiBahasaInggris(txt);
 
-            setTimeout(() => {
-                const aiMsg = document.createElement('div');
-                aiMsg.className = "bg-gray-100 p-2 rounded-xl max-w-[85%] text-gray-700 self-start text-left";
-                aiMsg.textContent = res; container.appendChild(aiMsg);
-                container.scrollTop = container.scrollHeight;
-            }, 400);
+    // 3. Tampilkan efek "Sedang mengetik..." sesuai bahasa yang terdeteksi
+    const typingMsg = document.createElement('div');
+    typingMsg.className = "bg-gray-100 p-2 rounded-xl max-w-[85%] text-gray-400 self-start text-left italic font-mono animate-pulse";
+    typingMsg.id = "ai-typing";
+    typingMsg.textContent = apakahBahasaInggris ? "AI is typing..." : "AI sedang mengetik...";
+    container.appendChild(typingMsg);
+    container.scrollTop = container.scrollHeight;
+
+    // 4. Berikan jeda waktu berpikir agar simulasi terasa nyata (600ms)
+    setTimeout(() => {
+        const typingIndicator = document.getElementById('ai-typing');
+        if(typingIndicator) typingIndicator.remove();
+
+        // 5. Ambil jawaban pintar berdasarkan bahasa
+        const aiResponseText = dapatkanJawabanBilingual(txt, apakahBahasaInggris);
+
+        // 6. Tampilkan jawaban AI ke chatbox
+        const aiMsg = document.createElement('div');
+        aiMsg.className = "bg-gray-100 p-2 rounded-xl max-w-[85%] text-gray-700 self-start text-left";
+        aiMsg.textContent = aiResponseText; 
+        container.appendChild(aiMsg);
+        
+        container.scrollTop = container.scrollHeight;
+    }, 600);
+}
+
+// FUNGSI PENDETEKSI KATA KUNCI BAHASA INGGRIS
+function deteksiBahasaInggris(teks) {
+    const t = teks.toLowerCase();
+    // Kumpulan kata dasar bahasa Inggris yang paling sering digunakan dalam percakapan/pertanyaan
+    const kamusInggris = [
+        'hello', 'hi ', 'how', 'what', 'why', 'who', 'where', 'is', 'am', 'are', 'you', 'your', 'this', 'that',
+        'the', 'good', 'morning', 'afternoon', 'night', 'thank', 'thanks', 'please', 'help', 'learn', 'speak',
+        'english', 'practice', 'price', 'cost', 'feature', 'platform', 'about', 'team', 'program', 'can', 'i '
+    ];
+    // Jika teks mengandung salah satu kata di atas, tandai sebagai bahasa Inggris
+    return kamusInggris.some(kata => t.includes(kata));
+}
+
+// MESIN JAWABAN PINTAR DUA BAHASA (INDONESIA & ENGLISH)
+function dapatkanJawabanBilingual(pertanyaan, isEnglish) {
+    const p = pertanyaan.toLowerCase();
+
+    // ==========================================
+    // RESPONS JIKA PENGGUNA BERBAHASA INGGRIS 🇺🇸
+    // ==========================================
+    if (isEnglish) {
+        if (p.includes('hello') || p.includes('hi')) {
+            return "Hello there! Welcome to MirrorTalk.id. Ready to boost your English speaking confidence today? ✨";
         }
-    </script>
+        if (p.includes('how are you') || p.includes('how\'s it going')) {
+            return "I'm doing fantastic, thank you for asking! How can I assist your speaking journey today?";
+        }
+        if (p.includes('who are you') || p.includes('your name') || p.includes('what are you')) {
+            return "I am your MirrorTalk Smart Assistant Bot! I'm here to guide you on how to practice speaking English independently. 🤖";
+        }
+        if (p.includes('price') || p.includes('cost') || p.includes('pay') || p.includes('package')) {
+            return "We offer 3 friendly learning packages: Basic (Rp10,000), Intermediate (Rp25,000), and Premium (Rp35,000). You can check the details under the 'Pricing Plans' section above!";
+        }
+        if (p.includes('how to learn') || p.includes('feature') || p.includes('how does it work')) {
+            return "It's easy! Click [Get Started] to register, choose your preferred conversation topic, practice speaking in front of a mirror, and record your voice for instant feedback evaluation!";
+        }
+        if (p.includes('thank')) {
+            return "You are very welcome! Keep up the spirit. Remember, practice makes perfect! 💪🔥";
+        }
+        
+        // Jawaban random bahasa Inggris jika pertanyaan di luar topik dasar
+        const responsesEng = [
+            `That's an interesting question about "${pertanyaan}"! To explore more structured speaking materials regarding this topic, click the [Get Started] button to register your account! 🚀`,
+            "Great prompt! As your speaking assistant, I highly recommend practicing that sentence out loud in front of a mirror using our audio recording dashboard layout. Try it out!",
+            "I love your enthusiasm for learning! We can dive deeper into various free speech conversations once you unlock one of our premium tiers. Check out the menus above!"
+        ];
+        return responsesEng[Math.floor(Math.random() * responsesEng.length)];
+    } 
+    
+    // ==========================================
+    // RESPONS JIKA PENGGUNA BERBAHASA INDONESIA 🇮🇩
+    // ==========================================
+    else {
+        if (p.includes('halo') || p.includes('hi') || p.includes('p')) {
+            return "Halo juga! Selamat datang di MirrorTalk.id. Sudah siap untuk melatih kelancaran bicara bahasa Inggris hari ini? ✨";
+        }
+        if (p.includes('apa kabar') || p.includes('gimana')) {
+            return "Kabar saya luar biasa baik! Bagaimana dengan kamu? Ada yang bisa saya bantu untuk latihan bicaramu hari ini?";
+        }
+        if (p.includes('siapa kamu') || p.includes('nama kamu') || p.includes('apa ini')) {
+            return "Saya adalah MirrorTalk Assistant Bot! Tugas saya adalah menemani dan memandu kamu belajar cara berbicara bahasa Inggris secara mandiri lewat metode cermin. 🤖";
+        }
+        if (p.includes('harga') || p.includes('bayar') || p.includes('paket') || p.includes('biaya')) {
+            return "Kami menyediakan 3 paket belajar murah: Paket Basic (Rp10.000), Intermediate (Rp25.000), dan Premium (Rp35.000). Kamu bisa cek detail fiturnya pada bagian 'Pricing Plans' di atas ya!";
+        }
+        if (p.includes('cara belajar') || p.includes('fitur') || p.includes('cara kerja')) {
+            return "Caranya gampang banget! Daftarkan akun kamu lewat tombol [Get Started], pilih topik obrolan yang kamu suka, rekam suaramu didepan cermin, lalu sistem kami akan memberikan skor evaluasi kelancaran bicaramu secara otomatis!";
+        }
+        if (p.includes('terima kasih') || p.includes('makasih') || p.includes('suwun')) {
+            return "Sama-sama! Tetap semangat ya latihannya. Jangan pernah takut salah, karena practice makes perfect! 💪🔥";
+        }
+
+        // Jawaban random bahasa Indonesia jika pertanyaan di luar topik dasar
+        const responsesInd = [
+            `Pertanyaan yang bagus sekali mengenai "${pertanyaan}"! Untuk menjelajahi materi percakapan terstruktur secara lengkap, yuk langsung buat akun kamu dengan klik tombol [Get Started]! 🚀`,
+            "Wah, ide yang menarik! Sebagai asisten bicaramu, saya sangat menyarankan kamu mencoba melafalkan kalimat pertanyaan itu langsung didepan cermin menggunakan fitur modul rekaman suara di Dashboard akunmu.",
+            "Saya sangat senang melihat semangat belajarmu! Kita bisa mengeksplorasi topik obrolan bebas secara lebih seru bersama mentor setelah kamu mengaktifkan salah satu paket belajar kami. Cek menunya di atas ya!"
+        ];
+        return responsesInd[Math.floor(Math.random() * responsesInd.length)];
+    }
+}
+</Script>
 </body>
 </html>
